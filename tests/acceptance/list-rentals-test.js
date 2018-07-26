@@ -31,6 +31,10 @@ test('should link to contact information', function(assert) {
 });
 
 test('should list available rentals', function(assert) {
+  visit('/');
+  andThen(function() {
+    assert.equal(document.querySelectorAll('.listing').length, 3, 'should display 3 listings')
+  });
 });
 
 test('should filter the list of rentals by city', function(assert) {
